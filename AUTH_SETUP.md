@@ -39,3 +39,8 @@ Google/GitHub Client Secret·SMTP 암호·DB 암호·service_role 키는 채팅�
 ## GitHub Pages 운영 연결
 
 앱 주소는 [https://yangseungyeol.github.io/KanbanBoard/](https://yangseungyeol.github.io/KanbanBoard/)이며 저장소는 [https://github.com/YangSeungYeol/KanbanBoard](https://github.com/YangSeungYeol/KanbanBoard)입니다. Supabase Redirect URLs에 이 주소를 추가해야 OAuth·이메일 인증 후 칸반으로 돌아옵니다. 기존 todo Site URL·Redirect URLs와 OAuth Provider callback은 변경하지 않습니다. 복귀 URL 미등록 시 기존 Site URL로 이동할 수 있으므로 [배포 확인](DEPLOY.md) 절차로 실제 계정 복귀를 확인합니다.
+
+
+## Pages 게시 후 확인
+
+[https://yangseungyeol.github.io/KanbanBoard/](https://yangseungyeol.github.io/KanbanBoard/) 게시와 로그인 화면·SDK 로드를 확인했다. 사용자가 Supabase Redirect URLs에 이 주소를 추가·저장했다고 확인했다. 실제 공개 앱에서 Google/GitHub 요청의 PKCE·복귀 주소 유지도 확인했으며, 외부 계정 동의·이메일 수신·로그인 사용자 CRUD는 별도 실계정 확인으로 남긴다.

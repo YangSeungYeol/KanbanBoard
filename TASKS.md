@@ -88,5 +88,10 @@
 ## 최신 상태 안내
 
 - 현재 테스트 기준: Jest 84개·Playwright 92개.
-- 운영 게시 대상: [https://yangseungyeol.github.io/KanbanBoard/](https://yangseungyeol.github.io/KanbanBoard/), 저장소: [https://github.com/YangSeungYeol/KanbanBoard](https://github.com/YangSeungYeol/KanbanBoard).
+- 운영 주소: [https://yangseungyeol.github.io/KanbanBoard/](https://yangseungyeol.github.io/KanbanBoard/), 저장소: [https://github.com/YangSeungYeol/KanbanBoard](https://github.com/YangSeungYeol/KanbanBoard).
 - Google·GitHub·이메일 인증과 사용자별 Supabase 저장을 사용한다. 예전 로컬 저장 및 배포 제외 문구는 당시 작업 범위이며 현재 요구사항이 아니다.
+
+
+## 게시 확인 — 2026-11-12
+
+운영 주소: [https://yangseungyeol.github.io/KanbanBoard/](https://yangseungyeol.github.io/KanbanBoard/). [앱 소스 6185f0a](https://github.com/YangSeungYeol/KanbanBoard/commit/6185f0a03784d7814cea16d10ea00ad84eef1311)의 [Pages 배포](https://github.com/YangSeungYeol/KanbanBoard/actions/runs/43162571976) 성공과 공개 데스크톱·모바일 로그인 화면·런타임 7개 원본 일치를 확인했다. 배포 전 Jest 84개·E2E 92개가 통과했다. Pages 설정과 Supabase 복귀 주소 등록은 사용자 완료 확인을 받았다. 실제 계정 동의·메일 수신·운영 데이터 CRUD는 별도 검증 범위다. 최신 배포 절차·증거는 [DEPLOY](DEPLOY.md)를 따른다.

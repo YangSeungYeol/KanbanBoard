@@ -55,4 +55,9 @@
 
 이메일·OAuth·사용자 전환·늦은 응답·이전 보드 가져오기는 UF-13~UF-17로 검증한다. SQL은 기존 todos·함수를 변경하지 않으며 로컬 PostgreSQL에서 보존·RLS·버전 충돌을 확인한다.
 
-저장소: [https://github.com/YangSeungYeol/KanbanBoard](https://github.com/YangSeungYeol/KanbanBoard). 운영 게시 대상: [https://yangseungyeol.github.io/KanbanBoard/](https://yangseungyeol.github.io/KanbanBoard/). 실제 최신 배포 결과는 [DEPLOY](DEPLOY.md), 남은 운영 확인은 [TASK](TASK.md)를 따른다.
+저장소: [https://github.com/YangSeungYeol/KanbanBoard](https://github.com/YangSeungYeol/KanbanBoard). 운영 주소: [https://yangseungyeol.github.io/KanbanBoard/](https://yangseungyeol.github.io/KanbanBoard/). 실제 최신 배포 결과는 [DEPLOY](DEPLOY.md), 남은 운영 확인은 [TASK](TASK.md)를 따른다.
+
+
+## 게시 확인 — 2026-11-12
+
+운영 주소: [https://yangseungyeol.github.io/KanbanBoard/](https://yangseungyeol.github.io/KanbanBoard/). [앱 소스 6185f0a](https://github.com/YangSeungYeol/KanbanBoard/commit/6185f0a03784d7814cea16d10ea00ad84eef1311)의 [Pages 배포](https://github.com/YangSeungYeol/KanbanBoard/actions/runs/43162571976) 성공과 공개 데스크톱·모바일 로그인 화면·런타임 7개 원본 일치를 확인했다. 배포 전 Jest 84개·E2E 92개가 통과했다. Pages 설정과 Supabase 복귀 주소 등록은 사용자 완료 확인을 받았다. 실제 계정 동의·메일 수신·운영 데이터 CRUD는 별도 검증 범위다. 최신 배포 절차·증거는 [DEPLOY](DEPLOY.md)를 따른다.

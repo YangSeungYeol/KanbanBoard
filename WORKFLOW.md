@@ -1,6 +1,6 @@
 # 작업 기록
 
-> 현재 게시 대상: [https://yangseungyeol.github.io/KanbanBoard/](https://yangseungyeol.github.io/KanbanBoard/) · [저장소](https://github.com/YangSeungYeol/KanbanBoard). 아래 번호별 기록은 당시 수행 결과를 보존하며 최신 배포 진행은 마지막 항목을 따른다.
+> 현재 운영 주소: [https://yangseungyeol.github.io/KanbanBoard/](https://yangseungyeol.github.io/KanbanBoard/) · [저장소](https://github.com/YangSeungYeol/KanbanBoard). 아래 번호별 기록은 당시 수행 결과를 보존하며 최신 배포 진행은 마지막 항목을 따른다.
 
 ## 001
 
@@ -226,7 +226,7 @@ npx
 
 ### 결과 요약
 
-- 처리 중: 전체 테스트와 저장소 상태를 확인한 후 Markdown 최신화·GitHub 커밋·Pages 배포를 진행한다. 커밋 메시지에 실제 Pages 주소를 포함한다.
+- 배포 전 Jest 84개·Playwright 92개가 통과했다. Markdown 13개를 최신화하고 앱·문서·테스트·SQL·설정 44개를 https://github.com/YangSeungYeol/KanbanBoard main에 게시했다. 앱 소스 커밋은 6185f0a03784d7814cea16d10ea00ad84eef1311이며 초기화·소스·후속 문서 커밋 메시지에 GitHub Pages: https://yangseungyeol.github.io/KanbanBoard/ 를 포함한다. Pages 실행 43162571976의 build·deploy·report-build-status 성공과 공개 URL HTTP 200을 확인했다. desktop/mobile 로그인 화면·공개 런타임 7개 SHA256 일치·OAuth Pages 복귀 경로·JavaScript 오류 및 가로 넘침 없음 확인을 통과했다. 사용자 Pages 설정과 Supabase 복귀 URL 저장 완료 보고도 반영했다. 실제 계정 OAuth 동의·메일 수신·운영 토큰 CRUD는 이 자동 검증과 구분한다.
 
 ## 016
 
@@ -263,4 +263,4 @@ Repository access의 선택 목록에 YangSeungYeol/KanbanBoard를 추가하는 
 
 ### 결과 요약
 
-- 사용자 저장소 접근 추가 보고 후 설치 174824706의 접근 목록에 YangSeungYeol/KanbanBoard가 포함된 것을 확인했다. 준비된 소스·문서 커밋과 Pages 배포를 재개한다.
+- 접근 목록에 KanbanBoard 추가를 확인한 뒤 초기화·소스 커밋을 게시했다. 사용자에게 Pages 및 Supabase 설정을 요청했고 각각 “Pages 설정 저장했음”, “Pages 주소 추가하고 저장했음” 응답을 받았다. https://github.com/YangSeungYeol/KanbanBoard/actions/runs/43162571976 배포 성공과 https://yangseungyeol.github.io/KanbanBoard/ 실제 공개 화면 검증을 완료했다. 원격 44개 파일과 공개 런타임 7개가 로컬 원본과 일치한다. 최신 검증·게시 결과를 Markdown 13개에 반영하며 후속 문서 커밋에도 Pages 주소를 포함한다.

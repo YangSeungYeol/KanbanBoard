@@ -55,8 +55,13 @@
 
 - [x] 배포 전 전체 Jest 84개·E2E 92개 재검증과 정적 파일·상대 경로 확인.
 - [x] Markdown 전체 최신화, README·DEPLOY 작성, .nojekyll 준비.
-- [ ] https://github.com/YangSeungYeol/KanbanBoard의 main에 소스·테스트·SQL·문서를 커밋하고 커밋 메시지에 https://yangseungyeol.github.io/KanbanBoard/ 포함.
-- [ ] Pages의 Deploy from a branch / main / root 설정 확인. 연결 도구에 설정 기능이 없으면 업로드 후 사용자에게 관리자 화면의 마지막 조작만 요청.
-- [ ] Supabase Redirect URLs에 https://yangseungyeol.github.io/KanbanBoard/ 등록 및 실제 계정 복귀 확인. 관리자 설정 도구가 없어 등록 여부는 사용자 확인 필요.
-- [ ] GitHub 배포 실행 성공과 공개 URL·정적 파일·로그인 화면을 실제 브라우저로 확인.
-- [ ] 최종 게시 결과를 문서에 반영하고 후속 문서 커밋에도 Pages 주소 포함.
+- [x] https://github.com/YangSeungYeol/KanbanBoard의 main에 소스·테스트·SQL·문서를 커밋하고 커밋 메시지에 https://yangseungyeol.github.io/KanbanBoard/ 포함.
+- [x] Pages의 Deploy from a branch / main / root 설정 확인. 연결 도구에 설정 기능이 없으면 업로드 후 사용자에게 관리자 화면의 마지막 조작만 요청.
+- [x] Supabase Redirect URLs에 https://yangseungyeol.github.io/KanbanBoard/ 등록 및 실제 계정 복귀 확인. 사용자가 추가·저장 완료를 확인했다. 실제 계정 인증 복귀 성공은 별도 확인 항목으로 유지한다.
+- [x] GitHub 배포 실행 성공과 공개 URL·정적 파일·로그인 화면을 실제 브라우저로 확인.
+- [x] 최종 게시 결과를 문서에 반영하고 후속 문서 커밋에도 Pages 주소 포함.
+
+
+## 배포 최종 결과
+
+운영 URL [https://yangseungyeol.github.io/KanbanBoard/](https://yangseungyeol.github.io/KanbanBoard/), 앱 소스 커밋 [6185f0a](https://github.com/YangSeungYeol/KanbanBoard/commit/6185f0a03784d7814cea16d10ea00ad84eef1311), Pages 실행 [43162571976](https://github.com/YangSeungYeol/KanbanBoard/actions/runs/43162571976) 성공을 확인했다. 44개 원격 파일·공개 런타임 7개 파일이 원본과 일치하고 desktop/mobile 로그인 화면·OAuth 복귀 경로·오류 없음 검증이 통과했다. 사용자가 Pages 설정 및 Supabase 복귀 URL 등록을 완료했다. 남은 것은 앞쪽의 실계정·실기기 확인이며 앱 게시 작업은 완료했다.

@@ -40,8 +40,13 @@
 
 ## 현재 프로젝트·게시 기준
 
-- 대상 저장소: https://github.com/YangSeungYeol/KanbanBoard, 예정 운영 주소: https://yangseungyeol.github.io/KanbanBoard/. 다른 실습 폴더나 todo 프로젝트 변경을 포함하지 않는다.
+- 대상 저장소: https://github.com/YangSeungYeol/KanbanBoard, 운영 주소: https://yangseungyeol.github.io/KanbanBoard/. 다른 실습 폴더나 todo 프로젝트 변경을 포함하지 않는다.
 - 게시 기준: Jest 84개·Playwright 92개 및 배포용 경로 확인. 원격 파일·커밋·Pages 실행·실제 접속 검증을 구분하여 기록한다.
 - 앱의 정적 파일과 문서·테스트·SQL은 저장소에 보존하되 node_modules·브라우저 바이너리·테스트 산출물·실제 세션 파일은 커밋하지 않는다.
 - 커밋 메시지에 Pages 주소를 포함한다. 기본 게시 방식은 main 브랜치 루트와 .nojekyll이다. 최초 Pages 설정은 GitHub 관리자 화면에서 수행해야 할 수 있다.
 - 원격 변경 통합은 merge만 사용하고 force push하지 않는다. Supabase의 기존 todo 주소·테이블·데이터는 유지한다.
+
+
+## 게시 확인 — 2026-11-12
+
+운영 주소: [https://yangseungyeol.github.io/KanbanBoard/](https://yangseungyeol.github.io/KanbanBoard/). [앱 소스 6185f0a](https://github.com/YangSeungYeol/KanbanBoard/commit/6185f0a03784d7814cea16d10ea00ad84eef1311)의 [Pages 배포](https://github.com/YangSeungYeol/KanbanBoard/actions/runs/43162571976) 성공과 공개 데스크톱·모바일 로그인 화면·런타임 7개 원본 일치를 확인했다. 배포 전 Jest 84개·E2E 92개가 통과했다. Pages 설정과 Supabase 복귀 주소 등록은 사용자 완료 확인을 받았다. 실제 계정 동의·메일 수신·운영 데이터 CRUD는 별도 검증 범위다. 최신 배포 절차·증거는 [DEPLOY](DEPLOY.md)를 따른다.
