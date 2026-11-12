@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#3949ab">
+  <title>칸반보드</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.2.2/dist/css/materialize.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.2.2/dist/js/materialize.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.0/dist/umd/supabase.js"></script>
+  <script defer src="config.js"></script>
+  <script defer src="auth.js"></script>
+  <script defer src="cloud.js"></script>
+  <script defer src="script.js"></script>
+  <script defer src="session.js"></script>
+</head>
+<body>
+  <main class="workspace">
+    <header class="page-header">
+      <div><p class="eyebrow">MY WORKSPACE</p><h1>칸반보드<span class="title-dot">.</span></h1><p class="intro">하나씩 시작하고, 차근차근 완성해요.</p></div>
+      <button id="add-card" class="btn waves-effect waves-light" type="button" disabled hidden><span aria-hidden="true">＋</span> 카드 추가</button>
+    </header>
+    <section id="auth-panel" class="auth-panel" aria-labelledby="auth-heading">
+      <p class="eyebrow">YOUR OWN WORKSPACE</p><h2 id="auth-heading">로그인</h2>
+      <p class="auth-intro">계정으로 로그인하고 어디서든 나의 보드를 이어가세요.</p>
+      <div class="auth-modes" aria-label="이메일 인증 방식"><button id="login-mode" type="button" class="btn-flat" aria-pressed="true">이메일 로그인</button><button id="signup-mode" type="button" class="btn-flat" aria-pressed="false">회원가입</button></div>
+      <form id="auth-form" novalidate>
+        <div class="auth-field"><label for="auth-email">이메일</label><input id="auth-email" type="email" autocomplete="email" required></div>
+        <div class="auth-field"><label for="auth-password">비밀번호</label><input id="auth-password" type="password" autocomplete="current-password" required></div>
+        <div id="confirm-field" class="auth-field" hidden><label for="auth-confirm">비밀번호 확인</label><input id="auth-confirm" type="password" autocomplete="new-password"></div>
+        <button id="auth-submit" class="btn waves-effect" type="submit" disabled>로그인</button>
+      </form>
+      <button id="resend-email" type="button" class="btn-flat" hidden>인증 메일 다시 보내기</button>
+      <p class="auth-divider">또는 다른 계정으로 계속하기</p>
+      <div class="oauth-buttons"><button id="google-login" class="btn-flat" type="button" disabled>Google로 계속하기</button><button id="github-login" class="btn-flat" type="button" disabled>GitHub로 계속하기</button></div>
+      <p class="auth-note">처음 소셜 로그인을 완료하면 계정이 생성됩니다. 이메일 가입은 인증 메일 확인이 필요합니다.</p>
+    </section>
+    <p id="auth-status" class="auth-status" role="status" aria-live="polite">인증 상태를 확인하고 있습니다…</p>
+    <p id="load-error" class="notice" role="alert" hidden></p>
+    <p id="auth-error" class="notice" role="alert" hidden></p>
+    <div id="account-menu" class="account-menu" hidden><span id="account-label"></span><div><button id="refresh-board" type="button" class="btn-flat">서버에서 다시 불러오기</button><button id="signout" type="button" class="btn-flat">로그아웃</button></div></div>
+    <div id="legacy-panel" class="notice" hidden><p>이 브라우저에 로그인 없이 만든 이전 보드가 있습니다. 현재 계정의 클라우드 보드가 비어 있을 때 가져올 수 있습니다.</p><button id="import-legacy" class="btn-flat" type="button">이전 보드 가져오기</button></div>
+    <section id="board-workspace" hidden aria-label="나의 칸반 작업 공간">
+    <p id="storage-warning" class="notice" role="alert" hidden></p>
+    <div class="board-caption"><span>나의 작업 보드</span><span>카드의 ⠿ 핸들을 잡고 이동하세요</span></div>
+    <div id="board" class="board" aria-label="칸반보드">
+      <section class="kanban-column" data-status="todo" aria-labelledby="heading-todo">
+        <header class="column-heading"><h2 id="heading-todo" tabindex="-1"><span class="status-dot" aria-hidden="true"></span>To-Do <span class="count" aria-label="카드 수">0</span></h2><span class="column-symbol" aria-hidden="true">○</span></header>
+        <div class="card-list" data-list="todo"></div>
+      </section>
+      <section class="kanban-column" data-status="in-progress" aria-labelledby="heading-in-progress">
+        <header class="column-heading"><h2 id="heading-in-progress" tabindex="-1"><span class="status-dot" aria-hidden="true"></span>In-Progress <span class="count" aria-label="카드 수">0</span></h2><span class="column-symbol" aria-hidden="true">◐</span></header>
+        <div class="card-list" data-list="in-progress"></div>
+      </section>
+      <section class="kanban-column" data-status="done" aria-labelledby="heading-done">
+        <header class="column-heading"><h2 id="heading-done" tabindex="-1"><span class="status-dot" aria-hidden="true"></span>Done <span class="count" aria-label="카드 수">0</span></h2><span class="column-symbol" aria-hidden="true">✓</span></header>
+        <div class="card-list" data-list="done"></div>
+      </section>
+    </div>
+    <footer class="board-footer">작은 진전도 충분히 의미 있어요.<span>계정별로 클라우드에 저장됩니다.</span></footer>
+    </section>
+  </main>
+  <dialog id="card-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="editor-heading" tabindex="-1">
+    <form id="card-form" novalidate>
+      <div class="modal-content"><p class="eyebrow">YOUR NEXT STEP</p><h2 id="editor-heading">카드 추가</h2>
+        <div class="input-field"><input id="card-title" name="title" type="text" required aria-describedby="title-error"><label for="card-title">제목 (필수)</label><p id="title-error" class="field-error" hidden>제목을 입력해주세요.</p></div>
+        <div class="input-field"><textarea id="card-description" name="description" class="materialize-textarea"></textarea><label for="card-description">설명 (선택)</label></div>
+      </div>
+      <div class="modal-footer"><button type="button" class="btn-flat" data-close>취소</button><button type="submit" class="btn waves-effect">저장</button></div>
+    </form>
+  </dialog>
+  <dialog id="delete-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="delete-heading" tabindex="-1">
+    <div class="modal-content"><h2 id="delete-heading">카드를 삭제할까요?</h2><p id="delete-title"></p><p>삭제한 카드는 복구할 수 없습니다.</p></div>
+    <div class="modal-footer"><button type="button" class="btn-flat" data-close>취소</button><button id="confirm-delete" type="button" class="btn danger">삭제</button></div>
+  </dialog>
+  <p id="announcement" class="sr-only" aria-live="polite" aria-atomic="true"></p>
+  <noscript><p class="notice">JavaScript를 활성화해야 칸반보드를 사용할 수 있습니다.</p></noscript>
+</body>
+</html>

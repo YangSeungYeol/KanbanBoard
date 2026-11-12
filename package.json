@@ -1,0 +1,33 @@
+{
+  "name": "day14-kanban",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "jest",
+    "start": "python3 -m http.server 8000 --bind 127.0.0.1",
+    "test:e2e:install": "node scripts/playwright.cjs install chromium",
+    "test:e2e": "node scripts/playwright.cjs test",
+    "test:e2e:headed": "node scripts/playwright.cjs test --headed",
+    "test:e2e:report": "node scripts/playwright.cjs show-report",
+    "test:all": "npm test -- --runInBand && npm run test:e2e",
+    "test:e2e:runtime": "node scripts/install-linux-runtime.cjs"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.16",
+    "@materializecss/materialize": "2.2.2",
+    "@playwright/test": "1.65.0",
+    "@supabase/supabase-js": "2.119.0",
+    "jest": "30.2.0",
+    "jest-environment-jsdom": "30.2.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "testMatch": [
+      "**/tests/**/*.test.cjs"
+    ],
+    "clearMocks": true
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
